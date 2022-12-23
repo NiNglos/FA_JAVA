@@ -1,16 +1,16 @@
-package com.company;
+package Java;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class Scheduler {
+public class Zadach {
     ArrayList<Task> tasks;
     int id_counter;
     Scanner scanner;
 
-    Scheduler() {
+    Zadach() {
         this.tasks = new ArrayList<>();
         this.id_counter = 0;
         this.scanner = new Scanner(System.in);
@@ -104,7 +104,7 @@ public class Scheduler {
     }
 
     private Date readDate() {
-        System.out.println("Введите дату в формате MMMM d, yyyy:");
+        System.out.println("Введите дату в формате MM DD YYYY:");
         DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
         String input = scanner.nextLine();
         try {
@@ -120,15 +120,15 @@ public class Scheduler {
         try {
             return Integer.parseInt(this.scanner.nextLine());
         } catch (NumberFormatException nfe) {
-            System.out.println("Неверный ввод");
+            System.out.println("Невернo");
         }
         return -1;
     }
 
     public void addTask() {
-        System.out.println("Введите название задания:");
+        System.out.println("Введите название :");
         String title = this.scanner.nextLine();
-        System.out.println("Введите описание задания:");
+        System.out.println("Введите описание :");
         String description = this.scanner.nextLine();
         this.tasks.add(new Task(this.id_counter++, title, description));
         System.out.println("Задание добавлено");
@@ -150,7 +150,7 @@ public class Scheduler {
 
     public void editTask(int task_id) {
         Task t = this.tasks.get(this.getTaskIndexById(task_id));
-        System.out.println("Что хотите изменить?");
+        System.out.println("Что изменить?");
         System.out.println("1 - Название");
         System.out.println("2 - Описание");
         switch (this.scanner.nextLine()) {
