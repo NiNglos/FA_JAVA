@@ -1,0 +1,26 @@
+// Example method for retrieving a list of films
+@GetMapping("/films")
+public List<Film> getFilms() {
+    // return a list of films from the database
+}
+
+// Example method for adding a film
+@PostMapping("/films")
+public Film addFilm(@RequestBody Film film) {
+    // save the film to the database
+    return film;
+}
+
+// Example method for updating a film
+@PutMapping("/films/{id}")
+public Film updateFilm(@PathVariable int id, @RequestBody Film film) {
+    film.setId(id);
+    // update the film in the database
+    return film;
+}
+
+// Example method for deleting a film
+@DeleteMapping("/films/{id}")
+public void deleteFilm(@PathVariable int id) {
+    // delete the film from the database
+}
